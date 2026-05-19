@@ -16,8 +16,8 @@ public class Car implements Vehicle  {
         System.out.println("Car engine started.");
     }
 
-    @Override
-    public String toString() {
-        return "Car";
-    }
+//    @Override
+//    public String toString() {
+//        return "Car";
+//    }
 }

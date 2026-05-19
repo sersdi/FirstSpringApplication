@@ -14,8 +14,8 @@ public class Motorbike implements Vehicle {
         System.out.println("Motorbike engine started.");
     }
 
-    @Override
-    public String toString() {
-        return "Motorbike";
-    }
+//    @Override
+//    public String toString() {
+//        return "Motorbike";
+//    }
 }

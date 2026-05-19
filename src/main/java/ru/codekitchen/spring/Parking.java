@@ -27,13 +27,13 @@ public class Parking {
         return vehiclesMap;
     }
 
-    @Override
-    public String toString() {
-        return "Parking{" +
-                "vehiclesList=" + vehiclesList +
-                ", vehiclesMap=" + vehiclesMap +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Parking{" +
+//                "vehiclesList=" + vehiclesList +
+//                ", vehiclesMap=" + vehiclesMap +
+//                '}';
+//    }
 
 
 }
