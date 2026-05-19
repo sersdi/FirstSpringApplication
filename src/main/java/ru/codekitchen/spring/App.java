@@ -4,8 +4,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.codekitchen.spring");
-        Vehicle vehicle = context.getBean("bike", Vehicle.class);
-        vehicle.startEngine();
-        context.close();
+        Person person = context.getBean("person", Person.class);
+        person.startVehicleEngine();
+
+        Parking parking = context.getBean("parking", Parking.class);
+        System.out.println(parking.getVehiclesList());
+        System.out.println(parking.getVehiclesMap());
+        System.out.println(parking);
     }
 }
