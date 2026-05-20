@@ -12,9 +12,11 @@ public class App {
         System.out.println("vehicle memory address: " + vehicle2);
         context.close();
 
-        DataBaseConnector connector1 = DataBaseConnector.getInstance();
-        DataBaseConnector connector2 = DataBaseConnector.getInstance();
-
+//        DataBaseConnector connector1 = DataBaseConnector.getInstance();
+//        DataBaseConnector connector2 = DataBaseConnector.getInstance();
+//        System.out.println("connector1 == connector2? Answer: "+ (connector1 == connector2));
+//        System.out.println("connector1 memory address: " + connector1);
+//        System.out.println("connector2 memory address: " + connector2);
 //        connector1.executeSql("SELECT * FROM students");
 
 
