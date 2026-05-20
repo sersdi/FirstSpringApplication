@@ -5,12 +5,17 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.codekitchen.spring");
-        Vehicle vehicle1 = context.getBean("car", Vehicle.class);
-        Vehicle vehicle2 = context.getBean("car", Vehicle.class);
-        System.out.println("vehicle == vehicle2? Answer: "+ (vehicle1 == vehicle2));
-        System.out.println("vehicle memory address: " + vehicle1);
-        System.out.println("vehicle memory address: " + vehicle2);
+        Vehicle vehicle = context.getBean("car",  Vehicle.class);
+        vehicle.startEngine();
         context.close();
+        System.out.println("Program is finished");
+
+//        Vehicle vehicle1 = context.getBean("car", Vehicle.class);
+//        Vehicle vehicle2 = context.getBean("car", Vehicle.class);
+//        System.out.println("vehicle == vehicle2? Answer: "+ (vehicle1 == vehicle2));
+//        System.out.println("vehicle memory address: " + vehicle1);
+//        System.out.println("vehicle memory address: " + vehicle2);
+//        context.close();
 
 //        DataBaseConnector connector1 = DataBaseConnector.getInstance();
 //        DataBaseConnector connector2 = DataBaseConnector.getInstance();
