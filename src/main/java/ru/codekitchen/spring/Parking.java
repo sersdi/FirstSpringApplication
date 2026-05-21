@@ -1,11 +1,11 @@
 package ru.codekitchen.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 
-@Component
+//@Component
 public class Parking {
 
     private final List<Vehicle> vehiclesList;

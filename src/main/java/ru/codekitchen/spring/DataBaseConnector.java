@@ -16,30 +16,26 @@ package ru.codekitchen.spring;
 // 1) Бины с таким скопом создаются только при обращении к Application Context при помощи метода getBean()
 // 2) При каждом таком обращении к Application Context создаётся новый бин
 // 3) Такой scope подходит для бинов, которые являются stateful, то есть хранят состояние
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class DataBaseConnector {
-    private static DataBaseConnector instance;
+    @Value("${database-connector.host}")
+    private String dataBaseHost;
 
-    private final String dataBaseHost;
-    private final String dataBasePort;
-    private final String dataBaseUser;
-    private final String dataBasePassword;
+    @Value("${database-connector.port}")
+    private String dataBasePort;
 
-    private DataBaseConnector() {
-        this.dataBaseHost = "http://localhost";
-        this.dataBasePort = "5432";
-        this.dataBaseUser = "admin";
-        this.dataBasePassword = "12345678";
-    }
+    @Value("${database-connector.credentials.username}")
+    private String dataBaseUser;
+
+    @Value("${database-connector.credentials.password}")
+    private String dataBasePassword;
 
     // Паблик геттер, который проверяет если в переменной instance NULL(нет экземпляра класса), то создает экземпляр класса DataBaseConnector
     // Если экземпляр класса создан, то он не создает ещё, а возвращает уже существующий(return instance)
-    public static DataBaseConnector getInstance() {
-        if(instance == null){
-            instance = new DataBaseConnector();
-        }
-        return instance;
-    }
-
     public void executeSql(String sql){
         System.out.println("Connecting: " +
                 dataBaseHost + ":" + dataBasePort + "?username=" + dataBaseUser + "&password=" + dataBasePassword);

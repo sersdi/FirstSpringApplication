@@ -1,8 +1,8 @@
 package ru.codekitchen.spring;
 
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component("bike")
+//@Component("bike")
 public class Motorbike implements Vehicle {
 
     public Motorbike() {

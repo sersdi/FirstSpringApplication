@@ -2,16 +2,19 @@ package ru.codekitchen.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
-@Component                      // IoC
+//@Component                      // IoC
 public class Person {
     //@Autowired //внедрение зависимости (DI через поле)
     private Vehicle vehicle;
+    private Dog dog;
+
 
     @Autowired // Внедрение зависимостей (DI через конструктор), рекомендуется внедрять через конструктор
-    public Person(@Qualifier("car") Vehicle vehicle) {    // Если у бина только один конструктор, то @Autowired можно не указывать
+    public Person(@Qualifier("car") Vehicle vehicle, Dog dog) {    // Если у бина только один конструктор, то @Autowired можно не указывать
         this.vehicle = vehicle;                           // Аннотация @Qualifier подсказывает какой именно бин будем инжектить(тк бинов типа Vehicle несколько)
+        this.dog = dog;
         System.out.println("Person bean is created");
     }
 
@@ -25,7 +28,9 @@ public class Person {
         System.out.println("Person is starting engine...");
         vehicle.startEngine();
     }
-
-
+    public void callPet(){
+        System.out.println("Person calling pet...");
+        System.out.println(dog.getName()+" come to me!");
+    }
 
 }

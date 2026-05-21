@@ -1,14 +1,21 @@
 package ru.codekitchen.spring;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+//import ru.codekitchen.spring.config.PetConfiguration;
+//import ru.codekitchen.spring.config.VehicleConfiguration;
 
 public class App {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ru.codekitchen.spring");
-        Vehicle vehicle = context.getBean("car",  Vehicle.class);
-        vehicle.startEngine();
-        context.close();
-        System.out.println("Program is finished");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        DataBaseConnector connector = context.getBean("dataBaseConnector",DataBaseConnector.class);
+        connector.executeSql("select * from person");
+
+
+//        Person person = context.getBean(Person.class);
+//        person.startVehicleEngine();
+//        person.callPet();
+//        context.close();
+
 
 //        Vehicle vehicle1 = context.getBean("car", Vehicle.class);
 //        Vehicle vehicle2 = context.getBean("car", Vehicle.class);
